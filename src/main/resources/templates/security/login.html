@@ -1,30 +1,225 @@
-<div xmlns="https://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+<div xmlns:th="https://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
 	<main>
-		<form th:action="@{/security/login}" method="post" class="col-sm-8 col-sm-offset-2">
-			<div class="panel panel-primary">
-				<div class="panel-heading">Giao Diện Đăng Nhập</div>
-				<div class="panel-body">
-					<div class="form-group">
-						<div>Tên Đăng Nhập: </div>
-						<input name="username" class="form-control">
-					</div>
-					<div class="form-group">
-						<div>Mật Khẩu Đăng Nhập: </div>
-						<input name="password" type="password" class="form-control">
-					</div>
-					<div class="form-group">
-						<div class="form-control">
-							<label class="checkbox-inline">
-								<input type="checkbox" name="remember-me"> Remember me ?
-							</label>
-						</div>
+		<form th:action="@{/security/login}" method="post"
+			class="col-sm-8 col-sm-offset-2">
+			<div class="card login_header">
+				<div class='loginS'>
+					<h4 class='loginS_h4'>Sign In</h4>
+					<b style="padding-top: 2rem;">Please login to use platform</b>
+				</div>
+				<div class="login_user">
+					<div class="form_item">
+						<span class="form_item_icon"><i class="bi bi-person-circle"></i></span>
+						<input class="login_user_input" name="username" type="text" placeholder="UserName">
 					</div>
 				</div>
-				<div class="panel-footer text-right">
-					<i class="pull-left text-danger" th:text="${message}"></i>
-					<button class="btn btn-success">Đăng Nhập</button>
+				<div class="login_pass">
+					<div class="form_item" style="align-items: center;">
+						<span class="form_item_icon"> <i class="bi bi-file-lock2"></i>
+						</span> <input class="login_pass_input" type="password"
+							placeholder='PassWord' name='password'>
+					</div>
+
+
+				</div>
+				<div class="remberme">
+					 <label style="display: flex;" class='remembers'><input style="margin-bottom: 7px;width: 3rem;font-size: 3rem;" type="checkbox"> Remember
+						me?</label> <a href="#">I forgot my password!</a>
+				</div>
+				<br>
+				<div class="login_btn">
+					<button class="login_btn_sign">Sign In</button>
+					<br>
+					<br>
+					<b>Don't have an account?</b> <a href="#">Create a free Account</a>
+				</div>
+				&ensp;
+				<div class="card_url">
+					<div class="card_url_b">Other Sign In PlantForm</div>
+					<div class="card_login_url_icon">
+						<a href="#"><span class='card_login_url_span'><i style="font-size: 3rem; color: black"
+								class="bi bi-facebook"></i></span></a>&ensp;
+								<a href="#"><span class='card_login_url_span'><i style="font-size: 3rem; color: black"
+								class="bi bi-messenger"></i></span></a>&ensp; 
+								<a href="#"><span
+							class='card_login_url_span'><i style="font-size: 3rem;color: black;" class="bi bi-google"></i></span></a>
+					</div>
 				</div>
 			</div>
 		</form>
+
+		<style>
+.card {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 5px;
+	z-index: 10;
+	min-height: 50vh
+}
+
+.card::after {
+	content: "";
+	position: absolute;
+	background: #999999;
+	top: 0;
+	left: 5%;
+	border-radius: 5px;
+	width: 90%;
+	height: 100%;
+	opacity: 0.1;
+	z-index: -1;
+}
+
+.card .loginS {
+	text-align: center;
+}
+
+.card .loginS .loginS_h4 {
+	display: flex;
+	position: relative;
+	font-size: 3rem;
+	font-weight: 700;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #607d8b;
+	display: flex;
+	padding-top: 3rem;
+	padding-bottom: 2rem; margin-left : 40%;
+	transform: translateZ(-50%);
+	margin-left: 40%;
+}
+.card .loginS .loginS_h4::after{
+	content: "";
+	position: absolute;
+	height: 2.5px;
+	width: 31%;
+	text-align: center;
+	left: 0;
+	top: 6.350rem;
+	background-color: #ff4584;
+}
+.card .loginS b{
+	opacity: 0.8;
+}
+.card .login_user {
+	padding: 3rem 15px;
+	margin: 0;
+	justify-items: center;
+}
+/* login Item */
+
+.login_user .form_item .form_item_icon i{
+	font-size: 2.5rem;
+	padding: 0px 2px;
+	opacity: 0.9;
+}
+
+.login_user .form_item .login_user_input {
+	padding: 0;
+	border: 1px solid #fff;
+	top: 8px;
+	border-radius: 50px;
+	width: 80%;
+	height: 4.5rem;
+	opacity: 0.9;
+	font-size: 18px;
+}
+
+/* .card .login_user .login_user_input::after {
+	content: 'qweqwewqe';
+	position: absolute;
+	font-size: 20px;
+	color: black;
+	z-index: 10;
+} */
+
+.card .login_pass {
+	padding: 10px 13px;
+	margin: 0;
+}
+.login_pass .form_item .form_item_icon i{
+	font-size: 2.8rem;
+}
+.card .login_pass .login_pass_label {
+	font-size: 15px;
+	font-weight: 500;
+	color: #4cb8c4;
+	margin: 0;
+	padding: 5px 10px;
+}
+
+.card .login_pass .login_pass_input {
+	position: relative;
+	border: none;
+	top: -4px;
+	border-radius: 50px;
+	width: 80%;
+	height: 4.5rem;
+	opacity: 0.9;
+	font-size: 18px;
+	/* z-index:-1; */
+}
+.login_pass_input::before{
+	content: "";
+	position: absolute;
+	width: 80%;
+	background-color: red;
+	height: 4.5rem;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+/* Remember Me */
+.remberme{
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem 6.5rem;
+	font-size: 1.5rem;
+}
+/* Login Btn Sign */
+.login_btn_sign{
+	width: 80%;
+	border: none;
+	border-radius: 50px;
+	background-color: black;
+	color: #fff;
+	font-size: 2rem;
+	height: 4.2rem;
+	text-align: center;
+}
+/* card_url */
+.card_url .card_url_b{
+	font-size: 18px;
+	opacity: 0.9;
+	padding-bottom: 0.5rem;
+	align-items: center;
+}
+.card_url .card_login_url_icon{
+	display: flex;
+	position: relative;
+	left: 45%;
+	transform: translateX(-50%);
+	align-items: center;
+	justify-content: space-between;
+	color: black;
+	padding: 2rem 20rem;
+}
+.card_login_url_icon .card_login_url_span{
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	padding: 2rem;
+	background-color: rgba(255, 255, 255, 10.25);
+	border-radius: 100px;
+}
+
+</style>
+
 	</main>
 </div>

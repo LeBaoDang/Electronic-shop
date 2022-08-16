@@ -22,12 +22,33 @@
 		<nav class="navbar navbar-inverse" style="font-variant: small-caps;">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
-					<li> <a href="/"> Home </a></li>
-					<li> <a href="#!product">Products</a> </li>
-					<li> <a href="#!authorize">Authorizing</a> </li>
-					<li> <a href="/security/logoff">Sign Out</a> </li>
+					<li> <a class='a_admin' href="/"> Home </a></li>
+					<li> <a class='a_admin' href="#!product">Products</a> </li>
+					<li> <a class='a_admin' href="#!authorize">Authorizing</a> </li>
+					<li> <a class='a_admin' href="/security/logoff">Sign Out</a> </li>
 				</ul>
 			</div>
+			<style>
+				.a_admin{
+					font-size: 19px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 500;
+                left: 0;
+                position: relative;
+				}.a_admin::after{
+					content: "";
+                position: absolute;
+                background-color: red;
+                width: 0;
+                height: 2.5px;
+                left: 1.6rem;
+                margin-top: 2rem;
+                transition: 0.5s ease;     
+				}
+				.a_admin:hover::after{
+					width: 89%;
+				}
+			</style>
 		</nav>
 	</div>
 <main>

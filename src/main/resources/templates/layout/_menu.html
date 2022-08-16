@@ -2,26 +2,68 @@
     <nav class="navbar navbar-inverse" style="font-variant: small-caps;">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
-                <li><a th:href="@{/}">Home</a></li>
+                <li><a style='display: flex;width: 80%;' class='a_menuLayout' th:href="@{/}">Home</a></li>
                 <!-- nếu mà đã có remoteUser -->
                 <th:block th:if="${#request.remoteUser}">
-                    <li><a th:href="@{/security/logoff}">Sign Out</a></li>
-                    <li><a th:href="@{/order/list}">Your Orders</a></li>
+                    <li><a class='a_menuLayouts' th:href="@{/security/logoff}">Sign Out</a></li>
+                    <li><a class='a_menuLayouts' th:href="@{/order/list}">Your Orders</a></li>
                     <!-- nếu đăng nhập là DIRE || STAF -->
                     <li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
-                        <a th:href="@{/admin/home/index}">Administration</a>
+                        <a class='a_menuLayouts' th:href="@{/admin/home/index}">Administration</a>
                     </li>
                 </th:block>
                 <!-- ngược lại -->
                 <th:block th:unless="${#request.remoteUser}">
-                    <li><a th:href="@{/security/login/form}">Sign In</a></li>
-                    <li><a th:href="@{/register}">Register</a></li>
+                    <li><a class='a_menuLayout' th:href="@{/security/login/form}">Sign In</a></li>
+                    <li><a class='a_menuLayout' th:href="@{/register}">Register</a></li>
                 </th:block>
             </ul>
             <!-- nếu dn rồi đăng nhập fullname -->
             <ul th:if="${#request.remoteUser}" class="nav navbar-nav navbar-right">
-                <li><a href="#"> Welcome [[${#request.remoteUser}]] </a></li>
+                <li><a class='a_menuLayout' href="#"> Welcome [[${#request.remoteUser}]] </a></li>
             </ul>
         </div>
+        <style>
+            .a_menuLayout{
+                font-size: 19px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 500;
+                left: 0;
+                position: relative;
+            }
+            .a_menuLayout::after{
+                content: "";
+                position: absolute;
+                background-color: red;
+                width: 0;
+                height: 2.5px;
+                left: 1.6rem;
+                margin-top: 2rem;
+                transition: 0.5s ease;              
+            }
+            .a_menuLayout:hover::after{
+                width: 87%;
+            }
+            .a_menuLayouts{
+                font-size: 19px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 500;
+                left: 0;
+                position: relative;
+            }
+            .a_menuLayouts::after{
+                content: "";
+                position: absolute;
+                background-color: red;
+                width: 0;
+                height: 2.5px;
+                left: 1.6rem;
+                margin-top: 2rem;
+                transition: 0.5s ease;              
+            }
+            .a_menuLayouts:hover::after{
+                width: 87%;
+            }
+        </style>
     </nav>
 </div>
