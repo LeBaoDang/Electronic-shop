@@ -40,5 +40,4 @@ public class AuthorityServiceImpl implements AuthorityService {
 	public void delete(Integer id) {
 		dao.deleteById(id);
 	}
-
 }

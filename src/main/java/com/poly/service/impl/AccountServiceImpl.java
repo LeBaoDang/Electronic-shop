@@ -1,5 +1,6 @@
 package com.poly.service.impl;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ public class AccountServiceImpl implements AccountService {
 	@Autowired 
 	AccountDAO acdao;
 	
+	
 	@Override
 	public Account findById(String username) {
 		return acdao.findById(username).get();
@@ -28,6 +30,11 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public List<Account> getAdministrators() {
 		return acdao.getAdministrators();
+	}
+
+	@Override
+	public Account save(Account userRequest) throws SQLException {
+		return acdao.save(userRequest);
 	}
 
 }

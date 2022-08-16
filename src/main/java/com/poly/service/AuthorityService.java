@@ -14,4 +14,8 @@ public interface AuthorityService {
 
 	public void delete(Integer id);
 
+
+
+
+
 }

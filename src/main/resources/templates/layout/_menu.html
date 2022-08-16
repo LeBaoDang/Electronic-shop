@@ -15,7 +15,7 @@
                 <!-- ngược lại -->
                 <th:block th:unless="${#request.remoteUser}">
                     <li><a th:href="@{/security/login/form}">Sign In</a></li>
-                    <li><a th:href="@{/security/register/form}">Register</a></li>
+                    <li><a th:href="@{/register}">Register</a></li>
                 </th:block>
             </ul>
             <!-- nếu dn rồi đăng nhập fullname -->
