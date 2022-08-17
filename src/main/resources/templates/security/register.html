@@ -1,42 +1,157 @@
-<div xmlns="https://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+<div xmlns:th="https://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
 	<main>
-		<form th:action="@{/register}" method="post" th:object="${userRequest}" class="col-sm-8 col-sm-offset-2">
-			<div class="panel panel-primary">
-				<div class="panel-heading">Giao diện đăng ký</div>
-				<div class="panel-body">
-					<div class="form-group">
-						<div>Username: </div>
-						<input th:field="*{username}" name="username" class="form-control">
-					</div>
-					<div class="form-group">
-						<div>Password: </div>
-						<input th:field="*{password}" name="password" type="password" class="form-control">
-					</div>
-					<div class="form-group">
-						<div>Fullname: </div>
-						<input th:field="*{fullname}" name="fullname" type="fullname" class="form-control">
-					</div>
-					<div class="form-group">
-						<div>Email: </div>
-						<input th:field="*{email}" name="email" type="email" class="form-control">
-					</div>
-					<div class="form-group">
-						<div>Email: </div>
-						<input th:field="*{photo}" value="user.png" name="photo" type="photo" class="form-control">
-					</div>
-					<div class="form-group">
-						<div class="form-control">
-							<label class="checkbox-inline">
-								<input type="checkbox" name="remember-me"> Remember me ?
-							</label>
-						</div>
-					</div>
-				</div>
-				<div class="panel-footer text-right">
-					<i class="pull-left text-danger" th:text="${message}"></i>
-					<button class="btn btn-success">Đăng ký</button>
-				</div>
-			</div>
-		</form>
+		 <div class="containers">
+        <div class="title">Registration</div>
+        <form  th:action="@{/register}" method="post" th:object="${userRequest}">
+            <div class="user_detail">
+                <div class="input_box">
+                    <span class="details">Fullname</span>
+                    <input th:field="*{fullname}" type="text" placeholder='Enter your Fullname' name='fullname' />
+                </div>
+                <div class="input_box">
+                    <span class="details">Username</span>
+                    <input th:field="*{username}" type="text" placeholder='Enter your Username' name='username' />
+                </div>
+                <div class="input_box">
+                    <span th:field="*{email}" class="details">Email</span>
+                    <input type="text" placeholder='Enter your Email' name='email' />
+                </div>
+                <div class="input_box">
+                    <span  th:field="*{password}" class="details">Password</span>
+                    <input type="password" placeholder='confirm your Password' name='Password' />
+                </div>
+                <div class="input_box">
+                    <span class="details">Photo</span>
+                    <input th:field="*{photo}"  type="file" placeholder='Enter your Image' name='image' />
+                </div>
+            </div>
+            <div class="rememner_details">
+                <input type="checkbox" name='remember'>
+                <span class="rememner_title">Remember Me ?</span>
+            </div>
+            <div class="button">
+                <i class="pull-left text-danger" th:text="${message}"></i>
+                <input type="submit" value='Register'>
+            </div>
+        </form>
+    </div>
+    <style>
+@import url('http://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+.containers{
+	position: relative;
+    max-width: 700px;
+    width: 100%;
+    padding: 5rem 3rem;
+    border-radius: 3px;
+    margin-left: 8rem;
+    margin-top: 2rem;
+}
+.containers::after{
+	content: "";
+	position: absolute;
+	background:  linear-gradient(135deg,#71b7e6,#9b59b6);
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	opacity: 0.3;
+	z-index: -1
+}
+.containers .title{
+    font-size: 30px;
+    font-weight: 600;
+    position: relative;
+    bottom: 0;
+}
+.containers .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background:  linear-gradient(135deg,#71b7e6,#9b59b6);
+    z-index: 10;
+}
+.containers form .user_detail{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+}
+form .user_detail .input_box{
+    width: calc(100% / 2 - 20px);
+}
+form .user_detail .input_box .details{
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    font-weight: 400;
+}
+form .user_detail .input_box input{
+    height: 40px;
+    width: 100%;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 1rem;
+    font-size: 15px;
+    border-bottom-width: 2px;
+}
+form .user_detail .input_box input[type="file"]{
+    align-items: center;
+    padding-top: 6px;
+    background-color: #fff;
+}
+.containers .rememner_details{
+    padding: 20px 0;
+
+}
+.containers .button{
+    position: relative;
+    width: 100%;
+    border: none;
+    border-radius: 50px;
+    height: 2.2rem;
+}
+.containers .button input[type="submit"]{
+    position: absolute;
+    width: 100%;
+    background:  linear-gradient(135deg,#71b7e6,#9b59b6);
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 50px;
+    height: 4.2rem;
+    color: #fff;
+    z-index: 10;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.5s ease;
+}
+.containers .button input[type="submit"]:hover{
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.5s ease;
+}
+</style>
 	</main>
 </div>
+</body>
