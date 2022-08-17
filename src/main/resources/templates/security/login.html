@@ -11,14 +11,14 @@
 				<div class="login_user">
 					<div class="form_item">
 						<span class="form_item_icon"><i class="bi bi-person-circle"></i></span>
-						<input class="login_user_input" name="username" type="text" placeholder="UserName">
+						<input class="login_user_input" name="username" type="text" placeholder="UserName....^-^">
 					</div>
 				</div>
 				<div class="login_pass">
 					<div class="form_item" style="align-items: center;">
 						<span class="form_item_icon"> <i class="bi bi-file-lock2"></i>
 						</span> <input class="login_pass_input" type="password"
-							placeholder='PassWord' name='password'>
+							placeholder='PassWord....^-^' name='password'>
 					</div>
 
 
@@ -67,7 +67,7 @@
 	position: absolute;
 	background: #999999;
 	top: 0;
-	left: 5%;
+	left: 5.5%;
 	border-radius: 5px;
 	width: 90%;
 	height: 100%;
@@ -80,25 +80,27 @@
 }
 
 .card .loginS .loginS_h4 {
-	display: flex;
 	position: relative;
+	display: flex;
+	width: 100%;
 	font-size: 3rem;
 	font-weight: 700;
 	font-family: Arial, Helvetica, sans-serif;
 	color: #607d8b;
 	display: flex;
 	padding-top: 3rem;
-	padding-bottom: 2rem; margin-left : 40%;
+	padding-bottom: 2rem;
+	margin-left : 40%;
 	transform: translateZ(-50%);
 	margin-left: 40%;
 }
-.card .loginS .loginS_h4::after{
+.loginS_h4::after{
 	content: "";
+	display: flex;
 	position: absolute;
 	height: 2.5px;
-	width: 31%;
-	text-align: center;
-	left: 0;
+	width: 20%;
+	left: 0px;
 	top: 6.350rem;
 	background-color: #ff4584;
 }
@@ -126,7 +128,9 @@
 	width: 80%;
 	height: 4.5rem;
 	opacity: 0.9;
-	font-size: 18px;
+	font-size: 16px;
+	text-transform: inherit;
+	text-align: center;
 }
 
 /* .card .login_user .login_user_input::after {
@@ -160,7 +164,9 @@
 	width: 80%;
 	height: 4.5rem;
 	opacity: 0.9;
-	font-size: 18px;
+	font-size: 16px;
+	text-transform: inherit;
+	text-align: inherit;
 	/* z-index:-1; */
 }
 .login_pass_input::before{
