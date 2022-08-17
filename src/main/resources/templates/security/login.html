@@ -11,14 +11,14 @@
 				<div class="login_user">
 					<div class="form_item">
 						<span class="form_item_icon"><i class="bi bi-person-circle"></i></span>
-						<input class="login_user_input" name="username" type="text" placeholder="UserName....^-^">
+						<input class="login_user_input" name="username" type="text" placeholder="Enter your username....^-^">
 					</div>
 				</div>
 				<div class="login_pass">
 					<div class="form_item" style="align-items: center;">
 						<span class="form_item_icon"> <i class="bi bi-file-lock2"></i>
 						</span> <input class="login_pass_input" type="password"
-							placeholder='PassWord....^-^' name='password'>
+							placeholder='Confirm your PassWord....^-^' name='password'>
 					</div>
 
 
@@ -57,7 +57,7 @@
 	margin: 0;
 	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
-	border-radius: 5px;
+	border-radius: 3px;
 	z-index: 10;
 	min-height: 50vh
 }
@@ -68,7 +68,7 @@
 	background: #999999;
 	top: 0;
 	left: 5.5%;
-	border-radius: 5px;
+	border-radius: 3px;
 	width: 90%;
 	height: 100%;
 	opacity: 0.1;
@@ -121,16 +121,15 @@
 }
 
 .login_user .form_item .login_user_input {
-	padding: 0;
 	border: 1px solid #fff;
+	outline: none;
+	padding-left: 2rem;
 	top: 8px;
 	border-radius: 50px;
 	width: 80%;
 	height: 4.5rem;
 	opacity: 0.9;
 	font-size: 16px;
-	text-transform: inherit;
-	text-align: center;
 }
 
 /* .card .login_user .login_user_input::after {
@@ -160,13 +159,13 @@
 	position: relative;
 	border: none;
 	top: -4px;
+	outline: none;
+	padding-left: 2rem;
 	border-radius: 50px;
 	width: 80%;
 	height: 4.5rem;
 	opacity: 0.9;
 	font-size: 16px;
-	text-transform: inherit;
-	text-align: inherit;
 	/* z-index:-1; */
 }
 .login_pass_input::before{
