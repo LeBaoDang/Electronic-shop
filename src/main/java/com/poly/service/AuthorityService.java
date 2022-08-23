@@ -1,8 +1,11 @@
 package com.poly.service;
 
+
 import java.util.List;
 
+
 import com.poly.entitys.Authority;
+
 
 public interface AuthorityService {
 
@@ -14,8 +17,5 @@ public interface AuthorityService {
 
 	public void delete(Integer id);
 
-
-
-
-
+	public void register(String username);
 }

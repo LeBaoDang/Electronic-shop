@@ -20,4 +20,5 @@ public class RoleServiceImpl implements RoleService {
 		return rdao.findAll();
 	}
 
+
 }

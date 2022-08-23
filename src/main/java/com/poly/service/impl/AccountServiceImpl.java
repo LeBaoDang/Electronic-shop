@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.poly.dao.AccountDAO;
+import com.poly.dao.AuthorityDAO;
 import com.poly.entitys.Account;
+
 import com.poly.service.AccountService;
 
 @Service
@@ -16,6 +18,8 @@ public class AccountServiceImpl implements AccountService {
 	@Autowired 
 	AccountDAO acdao;
 	
+	@Autowired
+	AuthorityDAO authodao;
 	
 	@Override
 	public Account findById(String username) {

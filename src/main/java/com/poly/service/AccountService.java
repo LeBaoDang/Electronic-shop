@@ -11,5 +11,4 @@ public interface AccountService {
 	public Account findById(String username);
 	public List<Account> getAdministrators();
 	public Account save(Account userRequest) throws SQLException;
-	
 }	

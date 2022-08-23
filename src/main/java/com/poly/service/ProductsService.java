@@ -10,7 +10,6 @@ public interface ProductsService {
 
 	Product findById(Integer id);
 
-
 	List<Product> findByCatergoryid(String cid);
 
 	Product create(Product product);

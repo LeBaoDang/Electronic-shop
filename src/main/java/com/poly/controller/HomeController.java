@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.poly.entitys.Account;
 import com.poly.service.AccountService;
 import com.poly.service.AuthorityService;
@@ -44,14 +46,15 @@ public class HomeController {
 	}
 	
 	@PostMapping("/register")
-	public String doPostRegister(@ModelAttribute("userRequest") Account userRequest) {
+	public String doPostRegister(@RequestParam("username") String username ,@ModelAttribute("userRequest") Account userRequest) {
 		try {
 			Account userResponse = accountser.save(userRequest);
+			authoSer.register(username);
 			if(ObjectUtils.isNotEmpty(userResponse)) {
 				return "redirect:/home/index";
 			} else {
 				return "redirect:/register";
-			}
+			} 
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "redirect:/register";

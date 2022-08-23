@@ -1,5 +1,6 @@
 package com.poly.service.impl;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.poly.dao.AccountDAO;
 import com.poly.dao.AuthorityDAO;
+
 import com.poly.entitys.Account;
 import com.poly.entitys.Authority;
+
 import com.poly.service.AuthorityService;
 
 @Service
@@ -19,6 +22,7 @@ public class AuthorityServiceImpl implements AuthorityService {
 	
 	@Autowired
 	AccountDAO acdao;
+	
 	
 	public List<Authority> findAll(){
 		return dao.findAll();
@@ -40,4 +44,10 @@ public class AuthorityServiceImpl implements AuthorityService {
 	public void delete(Integer id) {
 		dao.deleteById(id);
 	}
+
+	@Override
+	public void register(String username) {
+		dao.register(username);
+	}
+		
 }
