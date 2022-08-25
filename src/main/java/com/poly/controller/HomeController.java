@@ -39,6 +39,16 @@ public class HomeController {
 		return "redirect:/assets/admin/index.html";
 	}
 	
+	@RequestMapping("/contact")
+	public String contact() {
+		return "product/contact";
+	}
+	
+	@RequestMapping("/about")
+	public String about() {
+		return "product/about";
+	}
+	
 	@GetMapping("/register")
 	public String doGetRegister(Model model) {
 		model.addAttribute("userRequest",new Account());

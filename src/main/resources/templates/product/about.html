@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xnlms="http://www.thymeleaft.org" 
+th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+<main>
+<div class="band">
+  <div class="item-1">
+    <a href="https://www.24h.com.vn/thoi-trang/10-mau-tui-chanel-duoc-khao-khat-nhat-c78a1390384.html" class="card">
+      <div class="thumb" style="background-image: url(https://icdn.24h.com.vn/upload/3-2022/images/2022-08-25/1-1661420336-792-width600height450.jpg);"></div>
+      <article>
+        <h1>10 mẫu túi Chanel được khao khát nhất</h1>
+        <span>Read more</span>
+      </article>
+    </a>
+  </div>
+  <div class="item-2">
+    <a href="https://netbiz.vtc.vn/oppo-reno8-series-chuyen-gia-chup-chan-dung-the-he-thu-8-den-viet-nam-ar696373.html#:~:text=B%E1%BB%99%20ba%20s%E1%BA%A3n%20ph%E1%BA%A9m%20Reno8,b%C3%A1n%20l%E1%BA%BB%20tr%C3%AAn%20to%C3%A0n%20qu%E1%BB%91c." class="card">
+      <div class="thumb" style="background-image: url(https://image.vtc.vn/resize/th/upload/2022/08/24/cd9745c5957b50a25c526de5b4b403c6-07555047.jpg);"></div>
+      <article>
+        <h1>OPPO Reno8 Series: Chuyên gia chụp chân dung thế hệ thứ 8 đến Việt Nam</h1>
+        <span>Read more</span>
+      </article>
+    </a>
+  </div>
+  <div class="item-3">
+    <a href="https://design.tutsplus.com/articles/envato-tuts-community-challenge-created-by-you-july-edition--cms-26724" class="card">
+      <div class="thumb" style="background-image: url(https://cdn.tuoitre.vn/thumb_w/980/2022/8/25/z36674731588044348a86773e535095fb2f336bc8135e4-16614169786021453144961.jpg);"></div>
+      <article>
+        <h1>Honda Julio gần 25 năm tuổi - xe tay ga cổ điển, phá cách, giá hơn 70 triệu đồng tại Việt Nam</h1>
+        <span>Read more</span>
+      </article>
+    </a>
+  </div>
+  <div class="item-4">
+    <a href="https://congnghe.tuoitre.vn/facebook-tiktok-va-truth-social-bi-soi-vi-tran-lan-cac-tut-de-doa-fbi-20220820112912232.htm" class="card">
+      <div class="thumb" style="background-image: url(https://cdn.tuoitre.vn/thumb_w/586/2022/8/20/donald-trump-16609696329971049019756.jpg);"></div>
+      <article>
+        <h1>Facebook, TikTok, và Truth Social bị ‘soi’ vì tràn lan các ‘tút’ đe dọa FBI</h1>
+        <span>Read more</span>
+      </article>
+    </a>
+  </div>
+  <div class="item-5">
+    <a href="https://vnexpress.net/startup-viet-ung-dung-ai-kiem-tra-hang-loi-chinh-xac-98-4498097.html" class="card">
+      <div class="thumb" style="background-image: url(https://i1-vnexpress.vnecdn.net/2022/08/10/Thu-nghiem-he-thong-3164-1660134766.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=v_W521MOoTtaYllgxEMaog);"></div>
+      <article>
+        <h1>Startup Việt ứng dụng AI kiểm tra hàng lỗi chính xác 98%</h1>
+        <span>Read more</span>
+      </article>
+    </a>
+  </div>
+  <div class="item-6">
+    <a href="https://vnexpress.net/phim-viet-ve-xac-song-bi-che-khau-tao-hinh-4502939.html" class="card">
+      <div class="thumb" style="background-image: url(https://i1-giaitri.vnecdn.net/2022/08/25/cu-lao-1-3320-1661418065.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=VcV_JIaH7aGoFL3osZKy8w);"></div>
+      <article>
+        <h1>5 Phim Việt về xác sống bị chê khâu tạo hình</h1>
+        <span>Read more</span>
+      </article>
+    </a>
+  </div>
+  <div class="item-7">
+    <a href="https://vnexpress.net/nhung-cach-bien-hoa-quan-lung-them-sang-4503006.html" class="card">
+      <div class="thumb" style="background-image: url(https://i1-giaitri.vnecdn.net/2022/08/23/quan-lung-5-1661243644.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=822THaMTuoLQFT-qBwn4Ew);"></div>
+      <article>
+        <h1>Những cách biến hóa quần lửng thêm sang</h1>
+        <span>Read more</span>
+      </article>
+    </a>
+  </div>
+</div>
+<style>
+header {
+	 width: 90%;
+	 max-width: 1240px;
+	 margin: 0 auto;
+}
+ .band {
+	 width: 90%;
+	 max-width: 1240px;
+	 margin: 0 auto;
+	 display: grid;
+	 grid-template-columns: 1fr;
+	 grid-template-rows: auto;
+	 grid-gap: 20px;
+}
+ @media (min-width: 30em) {
+	 .band {
+		 grid-template-columns: 1fr 1fr;
+	}
+}
+ @media (min-width: 60em) {
+	 .band {
+		 grid-template-columns: repeat(4, 1fr);
+	}
+}
+ .card {
+	 background: white;
+	 text-decoration: none;
+	 color: #444;
+	 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	 display: flex;
+	 flex-direction: column;
+	 min-height: 100%;
+	 position: relative;
+	 top: 0;
+	 transition: all 0.1s ease-in;
+}
+ .card:hover {
+	 top: -2px;
+	 box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+ .card article {
+	 padding: 20px;
+	 flex: 1;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: space-between;
+}
+ .card h1 {
+	 font-size: 20px;
+	 margin: 0;
+	 color: #333;
+}
+ .card p {
+	 flex: 1;
+	 line-height: 1.4;
+}
+ .card span {
+	 font-size: 12px;
+	 font-weight: bold;
+	 color: #999;
+	 text-transform: uppercase;
+	 letter-spacing: 0.05em;
+	 margin: 2em 0 0 0;
+}
+ .card .thumb {
+	 padding-bottom: 60%;
+	 background-size: cover;
+	 background-position: center center;
+}
+ @media (min-width: 60em) {
+	 .item-1 {
+		 grid-column: 1 / span 2;
+	}
+	 .item-1 h1 {
+		 font-size: 24px;
+	}
+}
+</style>
+</main>
+</body>
+</html>
+

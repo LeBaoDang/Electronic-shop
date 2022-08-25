@@ -3,6 +3,8 @@
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li><a style='display: flex;width: 80%;' class='a_menuLayout' th:href="@{/}">Home</a></li>
+                <li><a  class='a_menuLayout' th:href="@{/contact}">Contact</a></li>
+                <li><a  class='a_menuLayout' th:href="@{/about}">About</a></li>
                 <!-- nếu mà đã có remoteUser -->
                 <th:block th:if="${#request.remoteUser}">
                     <li><a class='a_menuLayouts' th:href="@{/security/logoff}">Sign Out</a></li>
