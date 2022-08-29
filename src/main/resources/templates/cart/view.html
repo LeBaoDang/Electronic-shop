@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="https://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
-
 <body>
    <main>
    	<div class="panel panel-primary" th:fragment="shopping-cart">
-   		<div class="panel-heading">Giỏ Hàng Chi Tiết</div>
+   		<div class="panel-heading">Giá»� HĂ ng Chi Tiáº¿t</div>
    		<table class="table">
    			<thead>
    				<tr>
-   					<th>Mã Sản Phẩm</th>
-   					<th>Tên Sản Phẩm</th>
-   					<th>Giá</th>
-   					<th>Số lượng</th>
-   					<th>Tổng tiền</th>
+   					<th>MĂ£ Sáº£n Pháº©m</th>
+   					<th>TĂªn Sáº£n Pháº©m</th>
+   					<th>GiĂ¡</th>
+   					<th>Sá»‘ lÆ°á»£ng</th>
+   					<th>Tá»•ng tiá»�n</th>
    					<th></th>
    				</tr>
    			</thead>
@@ -21,7 +20,7 @@
    					<td>{{item.id}}</td>
    					<td>{{item.name}}</td>
    					<td>${{item.price | number :2}}</td>
-   					<td><input ng-change="cart.saveToLocalStorage()" ng-model="item.qty" type="number" min="1" style="width: 100px;"></td> <!--   ng-change: lưu số lượng khi thay đổi và f5 trang web */-->
+   					<td><input ng-change="cart.saveToLocalStorage()" ng-model="item.qty" type="number" min="1" style="width: 100px;"></td> <!--   ng-change: lÆ°u sá»‘ lÆ°á»£ng khi thay Ä‘á»•i vĂ  f5 trang web */-->
    					<td>${{item.qty*item.price | number : 2}}</td>
    					<td>
    						<button ng-click="cart.remove(item.id)" class="btn btn-sm btn-danger">
