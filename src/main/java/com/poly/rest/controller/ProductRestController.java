@@ -20,6 +20,7 @@ import com.poly.service.ProductsService;
 @RestController
 @RequestMapping("/rest/products")
 public class ProductRestController {
+	
 	@Autowired
 	ProductsService productsService;
 	

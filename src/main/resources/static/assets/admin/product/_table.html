@@ -24,8 +24,10 @@
 				<td>{{item.available ? 'Yes' : 'No'}}</td>
 				<td>
 					<div class="btn-group btn-group-xs">
-						<button ng-click="edit(item)" class="btn btn-warning glyphicon glyphicon-edit"></button>
-						<button ng-click="delete(item)" class="btn btn-danger glyphicon glyphicon-trash"></button>
+						<button ng-click="edit(item)"
+							class="btn btn-warning glyphicon glyphicon-edit"></button>
+						<button ng-click="delete(item)"
+							class="btn btn-danger glyphicon glyphicon-trash"></button>
 					</div>
 				</td>
 			</tr>
@@ -38,7 +40,8 @@
 		<button ng-click="pager.prev()" class="btn btn-primary">
 			<b class="glyphicon glyphicon-hand-left"></b>
 		</button>
-		<button class="btn btn-success">{{pager.page + 1}} of {{pager.count}}</button>
+		<button class="btn btn-success">{{pager.page + 1}} of
+			{{pager.count}}</button>
 		<button ng-click="pager.next()" class="btn btn-primary">
 			<b class="glyphicon glyphicon-hand-right"></b>
 		</button>
